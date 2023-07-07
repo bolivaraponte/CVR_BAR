@@ -1,0 +1,159 @@
+---
+graphics: yes
+name: Bolívar
+surname: Aponte Rolón
+headcolor: 414141
+#qualifications: 
+position: "PhD candidate"
+address: "3033 Chipewa St. |New Orleans, LA 70115"
+phone: "+1-787-433-6970"
+#www: 
+email: "apontebolivar@gmail.com"
+twitter: bolaponte
+github: bolivaraponte
+#linkedin: 
+aboutme: |
+  Ecologist.
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+csl: http://www.zotero.org/styles/apa
+nocite: "@*"
+header-includes:
+  - \usepackage{fancyhdr}
+  - \pagestyle{fancy}
+  - \fancyhf{}
+  - \fancyhead[R]{\thepage}
+output:
+  vitae::awesomecv:
+    page_total: true
+    fig_caption: yes
+    keep_tex: yes
+engine: xelatex
+pandoc_args:
+#    - --biblatex
+    - --lua-filter="lua/multiple-bibliographies.lua"
+bibliography_selected: "test2.bib"
+---
+```{r, include=FALSE, cache = FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+opts_knit$set(output.dir = "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR")
+opts_knit$get("tangle")
+
+library(vitae)
+library(tidyverse)
+library(kableExtra)
+library(readxl)
+library(readr)
+library(glue)
+```
+
+```{r, path}
+path <- "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR/docs"
+```
+
+# Education
+
+```{r, education}
+read_excel(file.path(path, "education_bar.xlsx")) %>%
+  tidyr::fill(-why) %>%
+  vitae::detailed_entries(what, 
+                          when, 
+                          with, 
+                          where, 
+                          why)
+```
+
+# Peer Reviewed Publications 
+
+:::{#refs}
+:::
+
+
+# Research Experience
+
+```{r, research}
+read_excel(file.path(path, "research_bar.xlsx")) %>%
+  tidyr::fill(-why) %>%
+  vitae::detailed_entries(what, 
+                         when = glue::glue("{startMonth} {startYear} - {endMonth} {endYear}",.na = ""), 
+                          with, 
+                          where, 
+                          why)
+```
+
+# Grants and Fellowships
+
+```{r, grants}
+read_excel(file.path(path, "grants.xlsx")) %>%
+  # tidyr::fill(-why) %>%
+  vitae::detailed_entries(what, 
+                          when = glue::glue("{startMonth} {startYear} - {endMonth} {endYear}",.na = ""), 
+                          with, 
+                          where, 
+                          why)
+```
+
+# Awards & Honors
+
+```{r, awards}
+read_excel(file.path(path, "awards.xlsx")) %>%
+  # tidyr::fill(-why) %>%
+  vitae::detailed_entries(what, 
+                          when,
+                          with, 
+                          where, 
+                          why)
+```
+
+# Conference Presentations and Posters
+
+`r knitr::knit_child(file.path(path, "conferences.txt"))`
+
+# Seminars & Workshops
+
+`r knitr::knit_child(file.path(path, "seminars.txt"))`
+
+# Teaching Experience
+
+Teaching Assistant
+
+#### Tulane University: 2018-Present 
+
+  + Spring 2023 \| **Natural History of Louisiana - EBIO 2330**. Dr. Donata Henry, Department of Ecology and Evolutionary Biology.\
+
+  + Spring 2023	\| **Theory and Methods in Ecology and Evolutionary Biology - EBIO 2020**. Dr. Donata Henry, Department of Ecology and Evolutionary Biology.\
+
+   + Fall 2022 \| **Entomology Lab – EBIO 4430/4431**. Dr. Dorothy Cheruiyot,
+Department of Ecology and Evolutionary Biology.\
+
+  + Spring 2022 \| **Insects and Human Interactions – EBIO 2210**. Dr. Dorothy Cheruiyot, Department of Ecology and Evolutionary Biology.\
+
+  + Spring 2021	\| **Plants and Human Affairs with lab – EBIO 3180/3185**. Dr. Keith Clay,
+Department of Ecology and Evolutionary Biology.\
+
+  + Fall 2020 \| **Entomology – EBIO 4430/4431**. Dr. Dorothy Cheruiyot,
+Department of Ecology and Evolutionary Biology.\
+
+  + Spring 2020	\| **Plant Biology and Adaptation with lab - EBIO 3590/3591**. Dr. Dorothy Cheruiyot, Department of Ecology and Evolutionary Biology.\
+
+  + Spring 2019	\| **Entomology Lab – EBIO 4430/4431**. Dr. Dorothy Cheruiyot, Department of Ecology and Evolutionary Biology.\
+
+  + Fall 2018	\| **Diversity of Life - EBIO 1010**. Dr. Donata Henry, Department of Ecology and Evolutionary Biology.\
+
+#### Guest Lectures
+
+  + Fall 2021 \| **Tropical Biology – EBIO 2110**, Dr. Renata Durães Ribeiro, Department of Ecology and Evolutionary Biology.\
+
+  + Fall 2021 \| **Entomology – EBIO 4430/4431**. Dr. Dorothy Cheruiyot, Department of Ecology and Evolutionary Biology.\
+
+  + Fall 2019	\| **Plants and Human Affairs – EBIO 3180/3185**. Dr. Dorothy Cheruiyot,
+Department of Ecology and Evolutionary Biology.\
+
+
+#### University of Michigan: 2016 - 2017
+
+  + Fall 2017 \| **NRE 509: Ecology: Concepts and Applications**. Dr. Sheila K. Schueller, 
+School for the Environment and Sustainability.\
+
+  + Fall 2016	\| **ENVIRON 270: Our Common Future**. Dr. Ivette Perfecto,
+Program in The Environment, College of Literature, Science and the Arts.\
