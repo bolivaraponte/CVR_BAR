@@ -1,0 +1,49 @@
+local List = require 'pandoc.List'
+local utils = require 'pandoc.utils'
+local stringify = utils.stringify
+
+function highlighter(given_name_pattern, family_name_pattern)
+  local highlight_author = function (author)
+    if author.given and author.family then
+      local given = stringify(author.given)
+      local family = stringify(author.family)
+      if given and given:match(given_name_pattern) and
+         family and family:match(family_name_pattern) then
+        author.given = {pandoc.Strong(setmetatable(author.given, nil))}
+        author.family = {pandoc.Strong(setmetatable(author.family, nil))}
+      end
+    end
+    return author
+  end
+  return function(reference)
+    if reference.author and reference.author.map then
+      reference.author = reference.author:map(highlight_author)
+    end
+    return reference
+  end
+end
+
+function Pandoc (doc)
+  local meta = doc.meta
+  local fh = io.popen(
+    "pandoc-citeproc --bib2yaml "
+      .. stringify(meta.bibliography)
+  )
+  if io.type(fh) ~= 'file' then return end
+
+  local bibyaml = fh:read('*a')
+  fh:close()
+
+  local references = pandoc.read(bibyaml).meta.references
+  meta.bibliography = nil
+
+  meta.references = references:map(
+    highlighter(stringify(meta['given-name-pattern'] or ''),
+                stringify(meta['family-name-pattern'] or ''))
+  )
+
+  return utils.run_json_filter(
+    pandoc.Pandoc(doc.blocks, meta),
+    'pandoc-citeproc'
+  )
+end

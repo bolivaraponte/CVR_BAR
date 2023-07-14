@@ -4,8 +4,8 @@ name: Bolívar
 surname: Aponte Rolón
 headcolor: 414141
 #qualifications: 
-position: "PhD candidate"
-address: "3033 Chipewa St. |New Orleans, LA 70115"
+position: "Ph.D. candidate"
+address: "3033 Chippewa St. | New Orleans, LA 70115"
 phone: "+1-787-433-6970"
 #www: 
 email: "apontebolivar@gmail.com"
@@ -27,11 +27,14 @@ output:
     page_total: true
     fig_caption: yes
     keep_tex: yes
-engine: xelatex
-pandoc_args:
-#    - --biblatex
-    - --lua-filter="lua/multiple-bibliographies.lua"
-bibliography_selected: "test2.bib"
+    pandoc_args: ["--lua-filter=lua/strong.lua"]
+     #- --lua-filter="lua/multiple-bibliographies.lua"
+     # - --lua-filter="lua/highlight-author.lua"
+      
+engine: pdflatex
+given-name-pattern: Bolívar
+family-name-pattern: Aponte Rolón
+#bibliography_packages: "bib/packages.bib"
 ---
 ```{r, include=FALSE, cache = FALSE}
 library(knitr)
@@ -63,10 +66,14 @@ read_excel(file.path(path, "education_bar.xlsx")) %>%
                           why)
 ```
 
+
+
 # Peer Reviewed Publications 
 
-:::{#refs}
-:::
+```{r}
+bibliography_entries("bib/test4.bib")
+```
+
 
 
 # Research Experience
@@ -157,3 +164,7 @@ School for the Environment and Sustainability.\
 
   + Fall 2016	\| **ENVIRON 270: Our Common Future**. Dr. Ivette Perfecto,
 Program in The Environment, College of Literature, Science and the Arts.\
+
+
+# Packages
+
