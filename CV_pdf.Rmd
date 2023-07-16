@@ -15,7 +15,7 @@ github: bolivaraponte
 aboutme: |
   Ecologist.
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
-csl: http://www.zotero.org/styles/apa
+csl: "csl/apa6-cv.csl"
 nocite: "@*"
 header-includes:
   - \usepackage{fancyhdr}
@@ -32,8 +32,8 @@ output:
      # - --lua-filter="lua/highlight-author.lua"
       
 engine: pdflatex
-given-name-pattern: Bolívar
-family-name-pattern: Aponte Rolón
+given-name-pattern: Bolivar
+family-name-pattern: Aponte
 #bibliography_packages: "bib/packages.bib"
 ---
 ```{r, include=FALSE, cache = FALSE}

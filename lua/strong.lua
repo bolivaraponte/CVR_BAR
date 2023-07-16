@@ -4,7 +4,7 @@ function Block(el)
 
             if el.content[k].t == "Str" and el.content[k].text == "Aponte," and
                 el.content[k + 1].t == "Space" and el.content[k + 2].t == "Str" and
-                el.content[k + 2].text:find("^Bolívar.") then
+                el.content[k + 2].text:find("^B.") then
 
                 local _, e = el.content[k + 2].text:find("^B.")
                 local rest = el.content[k + 2].text:sub(e + 1) -- empty if e+1>length

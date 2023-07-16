@@ -1330,7 +1330,7 @@
       <key macro="title" />
     </sort>
     <layout>
-      <!-- The following line has been added by JooYoung Seo (jseo1005@illinois.edu) to display annotated field -->
+      <!-- The following line has been added by Bolivar Aponte (apontebolivar@gmail.com) to display annotated field -->
       <text variable="annote" vertical-align="sup" suffix=" " />
       <group suffix=".">
         <group delimiter=". ">
@@ -1384,7 +1384,7 @@
         </else-if>
       </choose>
       <text variable="annote" display="block" />
-      <!-- The following line has been added by JooYoung Seo (jseo1005@illinois.edu) to display note field -->
+      <!-- The following line has been added by Bolivar Aponte (apontebolivar@gmail.com) to display note field -->
       <text variable="note" font-style="italic" prefix=". " suffix="." />
     </layout>
   </bibliography>
