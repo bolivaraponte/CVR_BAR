@@ -32,8 +32,8 @@ output:
      # - --lua-filter="lua/highlight-author.lua"
       
 engine: pdflatex
-given-name-pattern: Bolivar
-family-name-pattern: Aponte
+given-name-pattern: Bolívar
+family-name-pattern: Aponte Rolón
 #bibliography_packages: "bib/packages.bib"
 ---
 ```{r, include=FALSE, cache = FALSE}
@@ -71,7 +71,7 @@ read_excel(file.path(path, "education_bar.xlsx")) %>%
 # Peer Reviewed Publications 
 
 ```{r}
-bibliography_entries("bib/test5.bib")
+bibliography_entries("bib/test4.bib")
 ```
 
 
