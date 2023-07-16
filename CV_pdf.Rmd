@@ -27,7 +27,7 @@ output:
     page_total: true
     fig_caption: yes
     keep_tex: yes
-    pandoc_args: ["--lua-filter=lua/strong.lua"]
+    pandoc_args: ["--lua-filter=lua/strong2.lua"]
      #- --lua-filter="lua/multiple-bibliographies.lua"
      # - --lua-filter="lua/highlight-author.lua"
       
@@ -71,7 +71,7 @@ read_excel(file.path(path, "education_bar.xlsx")) %>%
 # Peer Reviewed Publications 
 
 ```{r}
-bibliography_entries("bib/test4.bib")
+bibliography_entries("bib/test5.bib")
 ```
 
 
