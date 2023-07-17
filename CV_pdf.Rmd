@@ -13,7 +13,7 @@ twitter: bolaponte
 github: bolivaraponte
 #linkedin: 
 aboutme: |
-  Ecologist.
+  Community ecologist | Bioinformatician | Curiosity driven
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
 csl: "csl/apa6-cv.csl"
 nocite: "@*"
@@ -27,9 +27,9 @@ output:
     page_total: true
     fig_caption: yes
     keep_tex: yes
-    pandoc_args: ["--lua-filter=lua/strong2.lua"]
+    pandoc_args: ["--lua-filter=lua/strong_sur.lua"]
      #- --lua-filter="lua/multiple-bibliographies.lua"
-     # - --lua-filter="lua/highlight-author.lua"
+     #- --lua-filter="lua/highlight-author.lua"
       
 engine: pdflatex
 given-name-pattern: Bolívar
@@ -71,7 +71,7 @@ read_excel(file.path(path, "education_bar.xlsx")) %>%
 # Peer Reviewed Publications 
 
 ```{r}
-bibliography_entries("bib/test4.bib")
+bibliography_entries("bib/bar_publications.bib")
 ```
 
 
