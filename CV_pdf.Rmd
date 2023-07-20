@@ -12,8 +12,8 @@ email: "apontebolivar@gmail.com"
 twitter: bolaponte
 github: bolivaraponte
 #linkedin: 
-aboutme: |
-  Community ecologist | Bioinformatician | Curiosity driven
+aboutme: I am curiosity driven community ecologist focused on plant-fungal symbiosis and genomics.
+skills: R (proficient), Bash (intermmediate), Python (beginner)
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
 csl: "csl/apa6-cv.csl"
 nocite: "@*"
@@ -165,6 +165,29 @@ School for the Environment and Sustainability.\
   + Fall 2016	\| **ENVIRON 270: Our Common Future**. Dr. Ivette Perfecto,
 Program in The Environment, College of Literature, Science and the Arts.\
 
+# Outreach
+```{r}
+read_excel(file.path(path, "outreach.xlsx")) %>%
+  tidyr::fill(-why) %>%
+  vitae::detailed_entries(what, 
+                         when = glue::glue("{endMonth} {endYear}",.na = ""), 
+                          with, 
+                          where, 
+                          why)
+```
 
-# Packages
+
+# Offices and Other Experience
+```{r}
+read_excel(file.path(path, "offices.xlsx")) %>%
+  tidyr::fill(-why) %>%
+  vitae::detailed_entries(what, 
+                         when = glue::glue("{startMonth} {startYear} - {endMonth} {endYear}",.na = ""), 
+                          with, 
+                          where, 
+                          why)
+
+```
+
+
 
