@@ -68,7 +68,8 @@ library(gridExtra)
 path <- "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR/docs"
 ```
 
-# Education
+\faIcon{graduation-cap} Education
+===============================
 
 ```{r, education}
 read_excel(file.path(path, "education_bar.xlsx")) %>%
@@ -81,14 +82,16 @@ read_excel(file.path(path, "education_bar.xlsx")) %>%
 ```
 
 
-# Peer Reviewed Publications
+\faIcon*{file} Peer Reviewed Publications
+===============================
 
 ```{r}
 bibliography_entries("bib/bar_publications.bib")
 ```
 
 
-# Research Experience
+\faIcon{microscope} Research Experience
+===============================
 
 ```{r, research}
 read_excel(file.path(path, "research_bar.xlsx")) %>%
@@ -101,41 +104,46 @@ read_excel(file.path(path, "research_bar.xlsx")) %>%
 ```
 
 
-# Grants and Fellowships
+\faIcon{medal} Grants and Fellowships
+===============================
 
 ```{r, grants}
 read_excel(file.path(path, "grants.xlsx")) %>%
   # tidyr::fill(-why) %>%
-  vitae::detailed_entries(what, 
+  vitae::detailed_entries(with,
+                          what, 
                           when = glue::glue("{startMonth} {startYear} - {endMonth} {endYear}",.na = ""), 
-                          with, 
                           where, 
                           why)
 ```
 
 
-# Awards & Honors
+\faIcon{award} Awards & Honors
+===============================
 
 ```{r, awards}
 read_excel(file.path(path, "awards.xlsx")) %>%
   # tidyr::fill(-why) %>%
-  vitae::detailed_entries(what, 
+  vitae::detailed_entries(with,
+                          what,
                           when,
-                          with, 
                           where, 
                           why)
 ```
 
-# Conference Presentations and Posters
+\faIcon{chalkboard-teacher} Conference Presentations and Posters
+===============================
 
 
 `r knitr::knit_child(file.path(path, "conferences.txt"))`
 
-# Seminars & Workshops
+\faIcon{comments} Seminars & Workshops
+===============================
 
 `r knitr::knit_child(file.path(path, "seminars.txt"))`
 
-# Teaching Experience
+\faIcon{chalkboard} Teaching Experience
+===============================
 
 Teaching Assistant
 
@@ -190,7 +198,8 @@ School for the Environment and Sustainability.\
 Program in The Environment, College of Literature, Science and the Arts.\
 
 
-# Outreach
+\faIcon[regular]{comments} Outreach
+===============================
 ```{r}
 read_excel(file.path(path, "outreach.xlsx")) %>%
   tidyr::fill(-why) %>%
@@ -202,7 +211,8 @@ read_excel(file.path(path, "outreach.xlsx")) %>%
 ```
 
 
-# Offices and Other Experience
+\faIcon{users-cog} Offices and Other Experience
+===============================
 ```{r}
 read_excel(file.path(path, "offices.xlsx")) %>%
   tidyr::fill(-why) %>%
@@ -214,14 +224,16 @@ read_excel(file.path(path, "offices.xlsx")) %>%
 
 ```
 
-# Memberships
+\faIcon{users} Memberships
+===============================
 **ATBC** \| Association for Tropical Biology and Conservation
 
 **ESA** \| Ecological Society of America 
 
 **SSE** \| Society for the Study of Evolution
 
-# Skills
+\faIcon{brain} Skills
+===============================
 
 \smallskip
 
@@ -230,14 +242,14 @@ read_excel(file.path(path, "offices.xlsx")) %>%
 ```{r langforeign, results='markup'}
 data.frame(
   Skill = c("Reading", "Writing", "Listening","Speaking"),
-  Spanish = cell_spec(c(rep("Native", 4)), 'latex', color = '#005c7b'),
-  English = cell_spec(c(rep("Advanced", 4)), 'latex', color = '#009acd'),
-  Portuguese = cell_spec(c(rep("Advanced", 4)), 'latex', color = '#4cb8dc')
+  Spanish = cell_spec(c(rep("Native", 4)), 'latex', color = '#7f7f9f'),
+  English = cell_spec(c(rep("Advanced", 4)), 'latex', color = '#7f7f9f'),
+  Portuguese = cell_spec(c(rep("Intermediate", 4)), 'latex', color = '#7f7f9f')
  )|>
    kable(booktabs = T, align = 'c', escape = F, format = "latex") |>
    kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") |>
-  row_spec(0, bold = T, color = "#000000")|>
-   column_spec(column = 1:3, width = '4.75cm')
+  row_spec(0, bold = T, color = "#414141")|>
+   column_spec(column = 1:4, width = '4.5cm')
 ```
 
 \faIcon{cogs} Technical skills
