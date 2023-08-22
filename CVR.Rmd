@@ -124,9 +124,9 @@ read_excel(file.path(path, "grants.xlsx")) %>%
 ```{r, awards}
 read_excel(file.path(path, "awards.xlsx")) %>%
   # tidyr::fill(-why) %>%
-  vitae::detailed_entries(with,
-                          what,
+  vitae::detailed_entries(what,
                           when,
+                          with,
                           where, 
                           why)
 ```
