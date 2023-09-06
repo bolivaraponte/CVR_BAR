@@ -257,7 +257,7 @@ data.frame(
 ```{r techtable, results='markup'}
 tribble(
    ~`Coding Languages`, ~Software, ~Other,
-  "R -- Bash -- Python",
+  "R -- Bash",
   "Fusion 360 -- Inkscape",
   "Git -- Markdown -- LaTex"
 ) |>
