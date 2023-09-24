@@ -6,7 +6,7 @@ headcolor: 414141
 profilepic: "C:/Users/boloq/Box/CV_Resume/Bolivar Aponte_Headshots_2022/Bolivar Aponte-pbc-1961.jpg"
 #qualifications: 
 position: "Ph.D. candidate"
-address: "Department of Ecology and Evolutionary Biology | Tulane UNiversity, New Orleans, LA 70118"
+address: "Department of Ecology and Evolutionary Biology | Tulane University, New Orleans, LA 70118"
 phone: "+1-787-433-6970"
 #www: 
 email: "apontebolivar@gmail.com"
