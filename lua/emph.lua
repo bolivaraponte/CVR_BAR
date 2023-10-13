@@ -18,7 +18,6 @@ function Block(el)
         
         for k, _ in ipairs(el.content) do
 
-
             if el.content[k].t == "Str" and el.content[k].text == "Alchornea" and
                 el.content[k + 1].t == "Space" and el.content[k + 2].t == "Str" and 
                 el.content[k + 2].text == "latifolia" then
@@ -28,11 +27,10 @@ function Block(el)
                 el.content[k] = pandoc.Emph {pandoc.Str("Alchornea latifolia")}
                 el.content[k + 1] = pandoc.Str(rest)
                 table.remove(el.content, k + 2) 
-              end
-         end
+            end
+        end
          
          for f, _ in ipairs(el.content) do
-
 
             if el.content[f].t == "Str" and el.content[f].text == "Azteca" and
                 el.content[f + 1].t == "Space" and el.content[f + 2].t == "Str" and 
@@ -43,8 +41,36 @@ function Block(el)
                 el.content[f] = pandoc.Emph {pandoc.Str("Azteca sericeasur,")}
                 el.content[f + 1] = pandoc.Str(rest)
                 table.remove(el.content, f + 2) 
-              end
-         end
+            end
+        end
+ 
+            for y, _ in ipairs(el.content) do
+                
+            if el.content[y].t == "Str" and el.content[y].text == "Tricleocarpa" and
+                el.content[y + 1].t == "Space" and el.content[y + 2].t == "Str" and
+                el.content[y + 2].text == "cylindrica." then
+                    
+                local _, e = el.content[y + 2].text:find("cylindrica.")
+                local rest = el.content[y + 4].text:sub(e + 1)
+                el.content[y] = pandoc.Emph {pandoc.Str("Tricleocarpa cylindrica.")}
+                el.content[y + 1] = pandoc.Str(rest)
+                table.remove(el.content, y + 2)
+            end
+        end
+            for w, _ in ipairs(el.content) do
+                    
+                if el.content[w].t == "Str" and el.content[w].text == "(Blighia" and
+                el.content[w + 1].t == "Space" and el.content[w + 2].t == "Str" and
+                el.content[w + 2].text == "sapida)" then
+                    
+                local _, e = el.content[w + 2].text:find("sapida)")
+                local rest = el.content[w + 4].text:sub(e + 1)
+                el.content[w] = pandoc.Emph {pandoc.Str("(Blighia sapida)")}
+                el.content[w + 1] = pandoc.Str(rest)
+                table.remove(el.content, w + 2)
+            end        
+        end
+
     end
     return el
 end
