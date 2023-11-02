@@ -1,3 +1,7 @@
+**Workshop Developer** (October 2023): *Introduction to Data Visualization in R*. Howard-Tilton Memorial Library, Tulane University, New Orleans LA.
+
+**Workshop Instructor** (October 2023): *Introduction to R, Part 1*. Developed by Mike Ellis. Howard-Tilton Memorial Library, Tulane University, New Orleans LA.
+
 **Delegate** (Aug. Sept. 2014): *"Encuentro latinoamericano y caribeño: asamblea intermedia"*. [Intermediate Assembly of the *Consejo de Educación Popular de América Latina y el Caribe-CEAAL*]. Quito, Ecuador.
 
 **Delegate** (October 2013): *"Rumbo a la asamblea intermedia"*. Sponsored by the *Consejo de Educación Popular de América Latina y el Caribe-CEAAL*. Santo Domingo, Dominican Republic.

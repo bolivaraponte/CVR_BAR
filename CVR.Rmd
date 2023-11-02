@@ -31,23 +31,27 @@ header-includes:
   - \definecolor{light-gray}{gray}{0.95}
   - \apptocmd{\tightlist}{\setlength{\itemsep}{2pt}}{}{}
 output:
+   
   vitae::awesomecv:
+     #- --lua-filter="lua/highlight-author.lua"
     page_total: true
     fig_caption: yes
     keep_tex: yes
     pandoc_args: 
      - --lua-filter="lua/strong_sur.lua"
      - --lua-filter="lua/emph.lua"
-     #- --lua-filter="lua/highlight-author.lua"
-      
-engine: pdflatex
+engine: xelatex
 #bibliography_packages: "bib/packages.bib"
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
+
 ```{r, include=FALSE, cache = FALSE}
 library(knitr)
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
-#opts_knit$set(output.dir = "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR")
-opts_knit$set(output.dir = "/home/baponte/Box/CV_Resume/CV/CVR_BAR")
+opts_knit$set(output.dir = "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR")
+#opts_knit$set(output.dir = "/home/baponte/Box/CV_Resume/CV/CVR_BAR")
 opts_knit$get("tangle")
 
 library(vitae)
@@ -61,11 +65,12 @@ library(emojifont)
 library(fontawesome)
 #library(huxtable)
 library(gridExtra)
+library(ggplot2)
 ```
 
 ```{r, path}
-#path <- "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR/docs"
-path <- "/home/baponte/Box/CV_Resume/CV/CVR_BAR"
+path <- "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR"
+#path <- "/home/baponte/Box/CV_Resume/CV/CVR_BAR"
 ```
 
 \faIcon{graduation-cap} Education
@@ -81,14 +86,18 @@ read_excel(file.path(path, "docs/education_bar.xlsx")) %>%
                           why)
 ```
 
-
-\faIcon*{file} Peer Reviewed Publications
+\faIcon{file} Peer-Reviewed Publications
 ===============================
 
 ```{r}
 bibliography_entries("bib/bar_publications.bib")
 ```
 
+\faIcon{file} *Other Publications*
+===============================
+```{r}
+bibliography_entries("bib/nonpeer_publications.bib")
+```
 
 \faIcon{microscope} Research Experience
 ===============================
@@ -103,7 +112,6 @@ read_excel(file.path(path, "docs/research_bar.xlsx")) %>%
                           why)
 ```
 
-
 \faIcon{medal} Grants and Fellowships
 ===============================
 
@@ -116,7 +124,6 @@ read_excel(file.path(path, "docs/grants.xlsx")) %>%
                           where, 
                           why)
 ```
-
 
 \faIcon{award} Awards & Honors
 ===============================
@@ -147,58 +154,72 @@ read_excel(file.path(path, "docs/awards.xlsx")) %>%
 Teaching Assistant
 
 #### Tulane University: 2018-Present
-  + Summer 2023 \| **Tropical Field Biology - EBIO 3780**. Dr. Sunshine Van Bael, Department of Ecology and Evolutionary Biology. \
-  
-  + Spring 2023 \| **Natural History of Louisiana - EBIO 2330**. Dr. Donata Henry, Department of Ecology and Evolutionary Biology.\
 
-  + Spring 2023	\| **Theory and Methods in Ecology and Evolutionary Biology - EBIO 2020**. Dr. Donata Henry, Department of Ecology and Evolutionary Biology.\
+-   Summer 2023 \| **Tropical Field Biology - EBIO 3780**. Dr. Sunshine
+    Van Bael, Department of Ecology and Evolutionary Biology.
 
-   + Fall 2022 \| **Entomology Lab – EBIO 4430/4431**. Dr. Dorothy Cheruiyot,
-Department of Ecology and Evolutionary Biology.\
+-   Spring 2023 \| **Natural History of Louisiana - EBIO 2330**. Dr.
+    Donata Henry, Department of Ecology and Evolutionary Biology.
 
-  + Spring 2022 \| **Insects and Human Interactions – EBIO 2210**. Dr. Dorothy Cheruiyot, Department of Ecology and Evolutionary Biology.\
-  
-  + Fall 2021 \| **Entomology – EBIO 4430/4431**. Dr. Dorothy Cheruiyot,
-Department of Ecology and Evolutionary Biology.\
+-   Spring 2023 \| **Theory and Methods in Ecology and Evolutionary
+    Biology - EBIO 2020**. Dr. Donata Henry, Department of Ecology and
+    Evolutionary Biology.
 
-  + Spring 2021	\| **Plants and Human Affairs with lab – EBIO 3180/3185**. Dr. Keith Clay,
-Department of Ecology and Evolutionary Biology.\
+-   Fall 2022 \| **Entomology Lab -- EBIO 4430/4431**. Dr. Dorothy
+    Cheruiyot, Department of Ecology and Evolutionary Biology.
 
-  + Fall 2020 \| **Entomology – EBIO 4430/4431**. Dr. Dorothy Cheruiyot,
-Department of Ecology and Evolutionary Biology.\
+-   Spring 2022 \| **Insects and Human Interactions -- EBIO 2210**. Dr.
+    Dorothy Cheruiyot, Department of Ecology and Evolutionary Biology.
 
-  + Spring 2020	\| **Plant Biology and Adaptation with lab - EBIO 3590/3591**. Dr. Dorothy Cheruiyot, Department of Ecology and Evolutionary Biology.\
-  
-  + Fall 2019	\| **Plants and Human Affairs – EBIO 3180/3185**. Dr. Dorothy Cheruiyot,
-Department of Ecology and Evolutionary Biology.\
+-   Fall 2021 \| **Entomology -- EBIO 4430/4431**. Dr. Dorothy
+    Cheruiyot, Department of Ecology and Evolutionary Biology.
 
-  + Spring 2019	\| **Entomology Lab – EBIO 4430/4431**. Dr. Dorothy Cheruiyot, Department of Ecology and Evolutionary Biology.\
+-   Spring 2021 \| **Plants and Human Affairs with lab -- EBIO
+    3180/3185**. Dr. Keith Clay, Department of Ecology and Evolutionary
+    Biology.
 
-  + Fall 2018	\| **Diversity of Life - EBIO 1010**. Dr. Donata Henry, Department of Ecology and Evolutionary Biology.\
+-   Fall 2020 \| **Entomology -- EBIO 4430/4431**. Dr. Dorothy
+    Cheruiyot, Department of Ecology and Evolutionary Biology.
+
+-   Spring 2020 \| **Plant Biology and Adaptation with lab - EBIO
+    3590/3591**. Dr. Dorothy Cheruiyot, Department of Ecology and
+    Evolutionary Biology.
+
+-   Fall 2019 \| **Plants and Human Affairs -- EBIO 3180/3185**. Dr.
+    Dorothy Cheruiyot, Department of Ecology and Evolutionary Biology.
+
+-   Spring 2019 \| **Entomology Lab -- EBIO 4430/4431**. Dr. Dorothy
+    Cheruiyot, Department of Ecology and Evolutionary Biology.
+
+-   Fall 2018 \| **Diversity of Life - EBIO 1010**. Dr. Donata Henry,
+    Department of Ecology and Evolutionary Biology.
 
 #### Guest Lectures
 
-  + Summer 2023 \| **Tropical Field Biology - EBIO 3780**, Dr. Sunshine Van Bael, Department of Ecology and Evolutionary Biology. 
+-   Summer 2023 \| **Tropical Field Biology - EBIO 3780**, Dr. Sunshine
+    Van Bael, Department of Ecology and Evolutionary Biology.
 
-  + Fall 2021 \| **Tropical Biology – EBIO 2110**, Dr. Renata Durães Ribeiro, Department of Ecology and Evolutionary Biology.\
+-   Fall 2021 \| **Tropical Biology -- EBIO 2110**, Dr. Renata Durães
+    Ribeiro, Department of Ecology and Evolutionary Biology.
 
-  + Fall 2021 \| **Entomology – EBIO 4430/4431**. Dr. Dorothy Cheruiyot, Department of Ecology and Evolutionary Biology.\
+-   Fall 2021 \| **Entomology -- EBIO 4430/4431**. Dr. Dorothy
+    Cheruiyot, Department of Ecology and Evolutionary Biology.
 
-  + Fall 2019	\| **Plants and Human Affairs – EBIO 3180/3185**. Dr. Dorothy Cheruiyot,
-Department of Ecology and Evolutionary Biology.\
-
+-   Fall 2019 \| **Plants and Human Affairs -- EBIO 3180/3185**. Dr.
+    Dorothy Cheruiyot, Department of Ecology and Evolutionary Biology.
 
 #### University of Michigan: 2016 - 2017
 
-  + Fall 2017 \| **NRE 509: Ecology: Concepts and Applications**. Dr. Sheila K. Schueller, 
-School for the Environment and Sustainability.\
+-   Fall 2017 \| **NRE 509: Ecology: Concepts and Applications**. Dr.
+    Sheila K. Schueller, School for the Environment and Sustainability.
 
-  + Fall 2016	\| **ENVIRON 270: Our Common Future**. Dr. Ivette Perfecto,
-Program in The Environment, College of Literature, Science and the Arts.\
-
+-   Fall 2016 \| **ENVIRON 270: Our Common Future**. Dr. Ivette
+    Perfecto, Program in The Environment, College of Literature, Science
+    and the Arts.\
 
 \faIcon[regular]{comments} Outreach
 ===============================
+
 ```{r}
 read_excel(file.path(path, "docs/outreach.xlsx")) %>%
   tidyr::fill(-why) %>%
@@ -209,9 +230,9 @@ read_excel(file.path(path, "docs/outreach.xlsx")) %>%
                           why)
 ```
 
-
 \faIcon{users-cog} Offices and Other Experience
 ===============================
+
 ```{r}
 read_excel(file.path(path, "docs/offices.xlsx")) %>%
   tidyr::fill(-why) %>%
@@ -225,9 +246,10 @@ read_excel(file.path(path, "docs/offices.xlsx")) %>%
 
 \faIcon{users} Memberships
 ===============================
+
 **ATBC** \| Association for Tropical Biology and Conservation
 
-**ESA** \| Ecological Society of America 
+**ESA** \| Ecological Society of America
 
 **SSE** \| Society for the Study of Evolution
 
@@ -237,7 +259,8 @@ read_excel(file.path(path, "docs/offices.xlsx")) %>%
 \smallskip
 
 \faIcon{language} Languages
--------------------------------
+===============================
+
 ```{r langforeign, results='markup'}
 data.frame(
   Skill = c("Reading", "Writing", "Listening","Speaking"),
@@ -252,8 +275,20 @@ data.frame(
 ```
 
 \faIcon{cogs} Technical skills
----------------------------------
+
 ```{r techtable, results='markup'}
+
+# lang= matrix(c(7, 5, 3), ncol=1, byrow=FALSE)
+# colnames(lang) <- c("Proficiency")
+# rownames <- c("R", "Bash", "Python")
+# lang <- tibble::rownames_to_column(lang, "Prgramming language")
+# 
+# lang <- as_tibble(lang)
+# lang
+# lang <- c("R", "Bash", "Python")
+# rate <- c(7, 5, 3)
+#table <- tibbble(cbind(rate, lang))
+#
 tribble(
    ~`Coding Languages`, ~Software, ~Other,
   "R -- Bash",

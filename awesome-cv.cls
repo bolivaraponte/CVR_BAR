@@ -10,6 +10,7 @@
 %
 % Modified by:
 % Lorena Abad <lore.abad6@gmail.com>
+% Bolívar Aponte Rolón <apontebolivar@gmail.com>
 %
 % Notes:
 % 1) This class file defines the structure and layout of the template file (cv.tex, resume.tex).
@@ -711,7 +712,7 @@
 % Define a title of the cover letter
 % Usage: \makelettertitle
 \newcommand*{\makelettertitle}{%
-  \vspace{8.4mm}
+  \vspace{3mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
@@ -723,6 +724,7 @@
   \ifthenelse{\isundefined{\@lettertitle}}
     {}
     {\lettertitlestyle{\@lettertitle} \\}
+  \vspace{6mm}
   \lettertextstyle{\@letteropening}
 }
 
