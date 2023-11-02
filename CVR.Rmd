@@ -46,7 +46,8 @@ engine: pdflatex
 ```{r, include=FALSE, cache = FALSE}
 library(knitr)
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
-opts_knit$set(output.dir = "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR")
+#opts_knit$set(output.dir = "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR")
+opts_knit$set(output.dir = "/home/baponte/Box/CV_Resume/CV/CVR_BAR")
 opts_knit$get("tangle")
 
 library(vitae)
@@ -63,14 +64,15 @@ library(gridExtra)
 ```
 
 ```{r, path}
-path <- "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR/docs"
+#path <- "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR/docs"
+path <- "/home/baponte/Box/CV_Resume/CV/CVR_BAR"
 ```
 
 \faIcon{graduation-cap} Education
 ===============================
 
 ```{r, education}
-read_excel(file.path(path, "education_bar.xlsx")) %>%
+read_excel(file.path(path, "docs/education_bar.xlsx")) %>%
   tidyr::fill(-why) %>%
   vitae::detailed_entries(what, 
                           when, 
@@ -92,7 +94,7 @@ bibliography_entries("bib/bar_publications.bib")
 ===============================
 
 ```{r, research}
-read_excel(file.path(path, "research_bar.xlsx")) %>%
+read_excel(file.path(path, "docs/research_bar.xlsx")) %>%
   tidyr::fill(-why) %>%
   vitae::detailed_entries(what, 
                          when = glue::glue("{startMonth} {startYear} - {endMonth} {endYear}",.na = ""), 
@@ -106,7 +108,7 @@ read_excel(file.path(path, "research_bar.xlsx")) %>%
 ===============================
 
 ```{r, grants}
-read_excel(file.path(path, "grants.xlsx")) %>%
+read_excel(file.path(path, "docs/grants.xlsx")) %>%
   # tidyr::fill(-why) %>%
   vitae::detailed_entries(with,
                           what, 
@@ -120,7 +122,7 @@ read_excel(file.path(path, "grants.xlsx")) %>%
 ===============================
 
 ```{r, awards}
-read_excel(file.path(path, "awards.xlsx")) %>%
+read_excel(file.path(path, "docs/awards.xlsx")) %>%
   # tidyr::fill(-why) %>%
   vitae::detailed_entries(what,
                           when,
@@ -132,13 +134,12 @@ read_excel(file.path(path, "awards.xlsx")) %>%
 \faIcon{chalkboard-teacher} Conference Presentations and Posters
 ===============================
 
-
-`r knitr::knit_child(file.path(path, "conferences.txt"))`
+`r knitr::knit_child(file.path(path, "docs/conferences.txt"))`
 
 \faIcon{comments} Seminars & Workshops
 ===============================
 
-`r knitr::knit_child(file.path(path, "seminars.txt"))`
+`r knitr::knit_child(file.path(path, "docs/seminars.txt"))`
 
 \faIcon{chalkboard} Teaching Experience
 ===============================
@@ -199,7 +200,7 @@ Program in The Environment, College of Literature, Science and the Arts.\
 \faIcon[regular]{comments} Outreach
 ===============================
 ```{r}
-read_excel(file.path(path, "outreach.xlsx")) %>%
+read_excel(file.path(path, "docs/outreach.xlsx")) %>%
   tidyr::fill(-why) %>%
   vitae::detailed_entries(what, 
                          when = glue::glue("{endMonth} {endYear}",.na = ""), 
@@ -212,7 +213,7 @@ read_excel(file.path(path, "outreach.xlsx")) %>%
 \faIcon{users-cog} Offices and Other Experience
 ===============================
 ```{r}
-read_excel(file.path(path, "offices.xlsx")) %>%
+read_excel(file.path(path, "docs/offices.xlsx")) %>%
   tidyr::fill(-why) %>%
   vitae::detailed_entries(what, 
                          when = glue::glue("{startMonth} {startYear} - {endMonth} {endYear}",.na = ""), 
