@@ -50,8 +50,8 @@ editor_options:
 ```{r, include=FALSE, cache = FALSE}
 library(knitr)
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
-opts_knit$set(output.dir = "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR")
-#opts_knit$set(output.dir = "/home/baponte/Box/CV_Resume/CV/CVR_BAR")
+#opts_knit$set(output.dir = "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR")
+opts_knit$set(output.dir = "/home/baponte/Box/CV_Resume/CV/CVR_BAR")
 opts_knit$get("tangle")
 
 library(vitae)
@@ -69,8 +69,8 @@ library(ggplot2)
 ```
 
 ```{r, path}
-path <- "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR"
-#path <- "/home/baponte/Box/CV_Resume/CV/CVR_BAR"
+#path <- "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR"
+path <- "/home/baponte/Box/CV_Resume/CV/CVR_BAR"
 ```
 
 \faIcon{graduation-cap} Education
