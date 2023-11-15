@@ -50,8 +50,8 @@ editor_options:
 ```{r, include=FALSE, cache = FALSE}
 library(knitr)
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
-#opts_knit$set(output.dir = "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR")
-opts_knit$set(output.dir = "/home/baponte/Box/CV_Resume/CV/CVR_BAR")
+opts_knit$set(output.dir = "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR")
+#opts_knit$set(output.dir = "/home/baponte/Box/CV_Resume/CV/CVR_BAR")
 opts_knit$get("tangle")
 
 library(vitae)
@@ -69,8 +69,8 @@ library(ggplot2)
 ```
 
 ```{r, path}
-#path <- "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR"
-path <- "/home/baponte/Box/CV_Resume/CV/CVR_BAR"
+path <- "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR"
+#path <- "/home/baponte/Box/CV_Resume/CV/CVR_BAR"
 ```
 
 \faIcon{graduation-cap} Education
@@ -165,30 +165,30 @@ Teaching Assistant
     Biology - EBIO 2020**. Dr. Donata Henry, Department of Ecology and
     Evolutionary Biology.
 
--   Fall 2022 \| **Entomology Lab -- EBIO 4430/4431**. Dr. Dorothy
+-   Fall 2022 \| **Entomology -- EBIO 4430/4431**. Dr. Jelagat
     Cheruiyot, Department of Ecology and Evolutionary Biology.
 
 -   Spring 2022 \| **Insects and Human Interactions -- EBIO 2210**. Dr.
-    Dorothy Cheruiyot, Department of Ecology and Evolutionary Biology.
+    Jelagat Cheruiyot, Department of Ecology and Evolutionary Biology.
 
--   Fall 2021 \| **Entomology -- EBIO 4430/4431**. Dr. Dorothy
+-   Fall 2021 \| **Entomology -- EBIO 4430/4431**. Dr. Jelagat
     Cheruiyot, Department of Ecology and Evolutionary Biology.
 
 -   Spring 2021 \| **Plants and Human Affairs with lab -- EBIO
     3180/3185**. Dr. Keith Clay, Department of Ecology and Evolutionary
     Biology.
 
--   Fall 2020 \| **Entomology -- EBIO 4430/4431**. Dr. Dorothy
+-   Fall 2020 \| **Entomology -- EBIO 4430/4431**. Dr. Jelagat
     Cheruiyot, Department of Ecology and Evolutionary Biology.
 
 -   Spring 2020 \| **Plant Biology and Adaptation with lab - EBIO
-    3590/3591**. Dr. Dorothy Cheruiyot, Department of Ecology and
+    3590/3591**. Dr. Jelagat Cheruiyot, Department of Ecology and
     Evolutionary Biology.
 
 -   Fall 2019 \| **Plants and Human Affairs -- EBIO 3180/3185**. Dr.
-    Dorothy Cheruiyot, Department of Ecology and Evolutionary Biology.
+    Jelagat Cheruiyot, Department of Ecology and Evolutionary Biology.
 
--   Spring 2019 \| **Entomology Lab -- EBIO 4430/4431**. Dr. Dorothy
+-   Spring 2019 \| **Entomology -- EBIO 4430/4431**. Dr. Jelagat
     Cheruiyot, Department of Ecology and Evolutionary Biology.
 
 -   Fall 2018 \| **Diversity of Life - EBIO 1010**. Dr. Donata Henry,
@@ -202,11 +202,11 @@ Teaching Assistant
 -   Fall 2021 \| **Tropical Biology -- EBIO 2110**, Dr. Renata Durães
     Ribeiro, Department of Ecology and Evolutionary Biology.
 
--   Fall 2021 \| **Entomology -- EBIO 4430/4431**. Dr. Dorothy
+-   Fall 2021 \| **Entomology -- EBIO 4430/4431**. Dr. Jelagat
     Cheruiyot, Department of Ecology and Evolutionary Biology.
 
 -   Fall 2019 \| **Plants and Human Affairs -- EBIO 3180/3185**. Dr.
-    Dorothy Cheruiyot, Department of Ecology and Evolutionary Biology.
+    Jelagat Cheruiyot, Department of Ecology and Evolutionary Biology.
 
 #### University of Michigan: 2016 - 2017
 
