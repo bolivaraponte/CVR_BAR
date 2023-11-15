@@ -1,7 +1,4 @@
-**Workshop Developer/Instructor** (November 2023): *Introduction to Version Control with Git*. Howard-Tilton Memorial Library, Tulane University, New Orleans LA.
-
-
-**Workshop Developer/Instructor** (October 2023): *Introduction to Data Visualization in R*. Howard-Tilton Memorial Library, Tulane University, New Orleans LA.
+**Workshop Developer** (October 2023): *Introduction to Data Visualization in R*. Howard-Tilton Memorial Library, Tulane University, New Orleans LA.
 
 **Workshop Instructor** (October 2023): *Introduction to R, Part 1*. Developed by Mike Ellis. Howard-Tilton Memorial Library, Tulane University, New Orleans LA.
 
