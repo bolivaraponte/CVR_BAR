@@ -7,6 +7,11 @@
 % Author:
 % Claud D. Park <posquit0.bj@gmail.com>
 % http://www.posquit0.com
+% 
+% 
+% 
+% % Adapted to be an Rmarkdown template by Mitchell O'Hara-Wild
+% 23 November 2018
 %
 % Modified by:
 % Lorena Abad <lore.abad6@gmail.com>
