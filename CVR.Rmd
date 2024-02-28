@@ -69,8 +69,7 @@ library(ggplot2)
 ```
 
 ```{r, path}
-path <- "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR"
-#path <- "/home/baponte/Box/CV_Resume/CV/CVR_BAR"
+path <- "/home/baponte/Boxx/CV_Resume/CV/CVR_BAR"
 ```
 
 \faIcon{graduation-cap} Education
