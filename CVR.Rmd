@@ -7,7 +7,7 @@ headcolor: 414141
 #qualifications: 
 position: "Ph.D. candidate"
 address: "Department of Ecology and Evolutionary Biology | Tulane University, New Orleans, LA 70118"
-phone: "+1-787-433-6970"
+#phone: "+1-787-433-6970"
 #www: 
 email: apontebolivar@gmail.com
 twitter: bolaponte
@@ -50,8 +50,8 @@ editor_options:
 ```{r, include=FALSE, cache = FALSE}
 library(knitr)
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
-opts_knit$set(output.dir = "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR")
-#opts_knit$set(output.dir = "/home/baponte/Box/CV_Resume/CV/CVR_BAR")
+#opts_knit$set(output.dir = "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR")
+opts_knit$set(output.dir = "/home/baponte/Box/CV_Resume/CV/CVR_BAR")
 opts_knit$get("tangle")
 
 library(vitae)
@@ -69,12 +69,16 @@ library(ggplot2)
 ```
 
 ```{r, path}
+<<<<<<< HEAD
 path <- "/home/baponte/Boxx/CV_Resume/CV/CVR_BAR"
+=======
+#path <- "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR"
+path <- "/home/baponte/Box/CV_Resume/CV/CVR_BAR"
+>>>>>>> 26e8ad0679a086f3b1cc68355b3c8285c6c7de3b
 ```
 
 \faIcon{graduation-cap} Education
 ===============================
-
 ```{r, education}
 read_excel(file.path(path, "docs/education_bar.xlsx")) %>%
   tidyr::fill(-why) %>%
@@ -85,7 +89,7 @@ read_excel(file.path(path, "docs/education_bar.xlsx")) %>%
                           why)
 ```
 
-\faIcon{file} Peer-Reviewed Publications
+\faIcon*{file} Peer-Reviewed Publications
 ===============================
 
 ```{r}
@@ -152,7 +156,18 @@ read_excel(file.path(path, "docs/awards.xlsx")) %>%
 
 Teaching Assistant
 
-#### Tulane University: 2018-Present
+#### Tulane University: 2018-Present\
+
+Instructor
+
+-    October 2023 \| *Introduction to Version Control with Git and GitHub*. Developed by **B. Aponte Rolón** for the Howard-Tilton Memorial Library, Tulane University, New Orleans LA.
+
+-   October 2023 \| *Introduction to Data Visualization in R*. Developed by **B. Aponte Rolón** for the Howard-Tilton Memorial Library, Tulane University, New Orleans LA.
+
+-   October 2023 \| *Introduction to R, Part 1*. Developed by Mike Ellis for the Howard-Tilton Memorial Library, Tulane University, New Orleans LA.
+
+
+Teaching Assistant
 
 -   Summer 2023 \| **Tropical Field Biology - EBIO 3780**. Dr. Sunshine
     Van Bael, Department of Ecology and Evolutionary Biology.
