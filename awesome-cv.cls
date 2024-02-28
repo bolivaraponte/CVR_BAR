@@ -578,7 +578,7 @@
 	\vspace{\acvSectionTopSkip}
 	\sectionstyle{#1}
 	\phantomsection
-	\color{gray}\vhrulefill{0.9pt}
+	\color{gray}\vhrulefill{1pt}
 }
 
 % Define a subsection for CV
@@ -610,7 +610,7 @@
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[5]{%
-  \vspace{-2.0mm}
+  \vspace{1.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.5cm} R{5.5cm}}

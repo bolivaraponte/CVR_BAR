@@ -97,25 +97,38 @@ plant-fungal symbiosis and genomics.}
 \apptocmd{\tightlist}{\setlength{\itemsep}{2pt}}{}{}
 
 % Pandoc CSL macros
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{2em}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
   % turn on hanging indent if param 1 is 1
-  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
-  % set entry spacing
-  \ifnum #2 > 0
-  \setlength{\parskip}{#2\baselineskip}
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
   \fi
- }%
- {}
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\honortitlestyle{#1}}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\honordatestyle{#1}}}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \begin{document}
@@ -128,7 +141,7 @@ plant-fungal symbiosis and genomics.}
 % Leave any of these blank if they are not needed
 % 2019-02-14 Chris Umphlett - add flexibility to the document name in footer, rather than have it be static Curriculum Vitae
 \makecvfooter
-  {December 02, 2023}
+  {February 28, 2024}
     {Bolívar Aponte Rolón~~~·~~~Curriculum Vitae}
   {\thepage~ of \pageref{LastPage}~}
 
@@ -140,9 +153,8 @@ plant-fungal symbiosis and genomics.}
 
 
 
-\hypertarget{education}{%
 \section{\texorpdfstring{\faIcon{graduation-cap}
-Education}{ Education}}\label{education}}
+Education}{ Education}}\label{education}
 
 \begin{cventries}
     \cventry{Ph. D. candidate}{Tulane University (TU), Department of Ecology and Biology}{New Orleans, LA}{2018 - Present}{\begin{cvitems}
@@ -154,44 +166,46 @@ Education}{ Education}}\label{education}}
 \end{cvitems}}
 \end{cventries}
 
-\hypertarget{peer-reviewed-publications}{%
 \section{\texorpdfstring{\faIcon*{file} Peer-Reviewed
-Publications}{ Peer-Reviewed Publications}}\label{peer-reviewed-publications}}
+Publications}{ Peer-Reviewed Publications}}\label{peer-reviewed-publications}
 
-\hypertarget{bibliography}{}
-\leavevmode\vadjust pre{\hypertarget{ref-aponterolonTwoTreesEnvironmental2023}{}}%
-\textbf{Aponte Rolón, B.}, \& Perfecto, I. (2023). Between Two Trees:
-Environmental Effects of \emph{Inga micheliana} and
-\emph{Alchornea latifolia} on Leaf Litter Ants in a Coffee
-Agroecosystem. \emph{Ecosphere}, \emph{14}(2), e4442.
+\phantomsection\label{refs-9f84bd10e097ee738a8eb225e41dcd56}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-aponterolon2023a}
+\textbf{Aponte Rolón, B.}, \& Perfecto, I. (2023). Between two trees:
+Environmental effects of I. Micheliana and A. Latifolia on leaf litter
+ants in a coffee agroecosystem. \emph{Ecosphere}, \emph{14}(2), e4442.
 \url{https://doi.org/10.1002/ecs2.4442}
 
-\leavevmode\vadjust pre{\hypertarget{ref-schmittEvaluatingCommunityEffects2020a}{}}%
+\bibitem[\citeproctext]{ref-schmitt2020}
 Schmitt, L., \textbf{Aponte Rolón, B.}, \& Perfecto, I. (2020).
-Evaluating Community Effects of a Keystone Ant,
-\emph{Azteca sericeasur,} on \emph{Inga micheliana} Leaf Litter
-Decomposition in a Shaded Coffee Agro-Ecosystem. \emph{Biotropica},
+Evaluating community effects of a Keystone Ant,
+\emph{Azteca sericeasur,} on \emph{Inga micheliana} leaf litter
+decomposition in a shaded coffee agro-ecosystem. \emph{Biotropica},
 \emph{52}(6), 1253--1261. \url{https://doi.org/10.1111/btp.12833}
 
-\hypertarget{other-publications}{%
-\section{\texorpdfstring{\faIcon{file} \emph{Other
-Publications}}{ Other Publications}}\label{other-publications}}
+\end{CSLReferences}
 
-\hypertarget{bibliography}{}
-\leavevmode\vadjust pre{\hypertarget{ref-aponterolon2023}{}}%
-\textbf{Aponte Rolón, B.} (2023). High-Molecular-Weight SPRI-aided DNA
-extraction from Mimulus (Phrymaceae) leaf tissue.
+\section{\texorpdfstring{\faIcon{file} \emph{Other
+Publications}}{ Other Publications}}\label{other-publications}
+
+\phantomsection\label{refs-9c97e696cc6d6fa4babf22c263f6c715}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-aponterolon2023b}
+\textbf{Aponte Rolón, B.} (2023). \emph{High-Molecular-Weight SPRI-aided
+DNA extraction from Mimulus (Phrymaceae) leaf tissue.}
 \url{https://doi.org/dx.doi.org/10.17504/protocols.io.bp2l6xn8rlqe/v2}
 
-\hypertarget{research-experience}{%
+\end{CSLReferences}
+
 \section{\texorpdfstring{\faIcon{microscope} Research
-Experience}{ Research Experience}}\label{research-experience}}
+Experience}{ Research Experience}}\label{research-experience}
 
 \begin{cventries}
     \cventry{Doctoral research}{Ecology and Evolutionary Biology}{Tulane University, New Orleans, LA}{August 2018 - Present }{\begin{cvitems}
 \item “Leaf Functional Traits Influence on Foliar Endophytic Fungi and Their Effects on Plant’s Response to Herbivory and Pathogenicity In Tropical Trees”  (in progress)
-\item “Foliar Endophytic Fungi in Yellow Monkeyflowers Along an Elevational Gradient in the Sierra Nevada, CA”
-\item “Leaf Functional Trait Plasticity and Foliar Endophytic Fungi in Yellow Monkeyflowers: Linking Traits and Symbionts to Genes”
+\item “Foliar Endophytic Fungi in Yellow Monkeyflowers Along an Elevational Gradient in the Sierra Nevada, CA”  (in progress)
+\item “Leaf Functional Trait Plasticity and Foliar Endophytic Fungi in Yellow Monkeyflowers: Linking Traits and Symbionts to Genes”  (in progress)
 \item PI, Sunshine Van Bael Ph.D. \& Kathleen Ferris, Ph.D.
 \end{cvitems}}
     \cventry{Master’s Thesis}{School for the Environment and Sustainability}{University of Michigan, Ann Arbor, MI}{January 2016 - April 2018}{\begin{cvitems}
@@ -218,9 +232,8 @@ Experience}{ Research Experience}}\label{research-experience}}
 \end{cvitems}}
 \end{cventries}
 
-\hypertarget{grants-and-fellowships}{%
 \section{\texorpdfstring{\faIcon{medal} Grants and
-Fellowships}{ Grants and Fellowships}}\label{grants-and-fellowships}}
+Fellowships}{ Grants and Fellowships}}\label{grants-and-fellowships}
 
 \begin{cventries}
     \cventry{Department of Ecology and Evolutionary Biology}{Student Research Grant}{Tulane University, New Orleans, LA.}{February 2020 - 2021 ,2022}{}\vspace{-4.0mm}
@@ -230,9 +243,8 @@ Fellowships}{ Grants and Fellowships}}\label{grants-and-fellowships}}
     \cventry{Rackham Graduate School}{Rackham Master Fellowship}{University of Michigan, Ann Arbor, MI.}{April  -  2015}{}\vspace{-4.0mm}
 \end{cventries}
 
-\hypertarget{awards-honors}{%
 \section{\texorpdfstring{\faIcon{award} Awards \&
-Honors}{ Awards \& Honors}}\label{awards-honors}}
+Honors}{ Awards \& Honors}}\label{awards-honors}
 
 \begin{cventries}
     \cventry{Summer Graduate Award}{The Connolly Alexander Institute for Data Science}{Tulane University, New Orleans, LA}{June 2023}{}\vspace{-4.0mm}
@@ -245,10 +257,9 @@ Honors}{ Awards \& Honors}}\label{awards-honors}}
 \end{cvitems}}
 \end{cventries}
 
-\hypertarget{conference-presentations-and-posters}{%
 \section{\texorpdfstring{\faIcon{chalkboard-teacher} Conference
 Presentations and
-Posters}{ Conference Presentations and Posters}}\label{conference-presentations-and-posters}}
+Posters}{ Conference Presentations and Posters}}\label{conference-presentations-and-posters}
 
 \textbf{Aponte Rolón, B.} (2023 June). \emph{Oral Presentation}:
 ``Foliar fungal symbionts in sympatric yellow monkeyflowers along an
@@ -306,9 +317,8 @@ Ingrid, PhD.) Annual poster presentation of the American Chemical
 Society, Puerto Rico Chapter, University of Puerto Rico, Río Piedras
 Campus, San Juan, Puerto Rico.
 
-\hypertarget{seminars-workshops}{%
 \section{\texorpdfstring{\faIcon{comments} Seminars \&
-Workshops}{ Seminars \& Workshops}}\label{seminars-workshops}}
+Workshops}{ Seminars \& Workshops}}\label{seminars-workshops}
 
 \textbf{Delegate} (Aug.~Sept.~2014): \emph{``Encuentro latinoamericano y
 caribeño: asamblea intermedia''}. {[}Intermediate Assembly of the
@@ -358,13 +368,11 @@ Popular y el Movimiento Estudiantil''} {[}Workshop on Popular Education
 and the Student Movement{]}. \emph{La Nueva Escuela} at The University
 of Puerto Rico, Río Piedras Campus, San Juan, Puerto Rico.
 
-\hypertarget{teaching-experience}{%
 \section{\texorpdfstring{\faIcon{chalkboard} Teaching
-Experience}{ Teaching Experience}}\label{teaching-experience}}
+Experience}{ Teaching Experience}}\label{teaching-experience}
 
-\hypertarget{tulane-university-2018-present}{%
 \paragraph{\texorpdfstring{Tulane University: 2018-Present\\
-}{Tulane University: 2018-Present }}\label{tulane-university-2018-present}}
+}{Tulane University: 2018-Present }}\label{tulane-university-2018-present}
 
 Instructor
 
@@ -430,8 +438,7 @@ Teaching Assistant
   Dr.~Donata Henry, Department of Ecology and Evolutionary Biology.
 \end{itemize}
 
-\hypertarget{guest-lectures}{%
-\paragraph{Guest Lectures}\label{guest-lectures}}
+\paragraph{Guest Lectures}\label{guest-lectures}
 
 \begin{itemize}
 \item
@@ -450,9 +457,8 @@ Teaching Assistant
   Evolutionary Biology.
 \end{itemize}
 
-\hypertarget{university-of-michigan-2016---2017}{%
 \paragraph{University of Michigan: 2016 -
-2017}\label{university-of-michigan-2016---2017}}
+2017}\label{university-of-michigan-2016---2017}
 
 \begin{itemize}
 \item
@@ -465,9 +471,8 @@ Teaching Assistant
   Literature, Science and the Arts.\\
 \end{itemize}
 
-\hypertarget{outreach}{%
 \section{\texorpdfstring{\faIcon[regular]{comments}
-Outreach}{ Outreach}}\label{outreach}}
+Outreach}{ Outreach}}\label{outreach}
 
 \begin{cventries}
     \cventry{FIRST Robotics Competition}{FIRST}{Bayou Regional}{March 2022}{\begin{cvitems}
@@ -481,12 +486,13 @@ Outreach}{ Outreach}}\label{outreach}}
 \end{cvitems}}
 \end{cventries}
 
-\hypertarget{offices-and-other-experience}{%
 \section{\texorpdfstring{\faIcon{users-cog} Offices and Other
-Experience}{ Offices and Other Experience}}\label{offices-and-other-experience}}
+Experience}{ Offices and Other Experience}}\label{offices-and-other-experience}
 
 \begin{cventries}
-    \cventry{Coordinator}{Tulanians Who Enjoy R Coding (TWERC)}{}{January 2023 - Present }{}\vspace{-4.0mm}
+    \cventry{Product Developer}{Connolly Alexander Institute for Data Science}{}{January 2024 - Present }{}\vspace{-4.0mm}
+    \cventry{Instructor}{Howard-Tilton Memorial Library,}{}{September 2023 - December 2023}{}\vspace{-4.0mm}
+    \cventry{Coordinator}{Tulanians Who Enjoy R Coding (TWERC)}{}{January 2023 - January 2024}{}\vspace{-4.0mm}
     \cventry{Urban Agriculture Instructor}{AmeriCorps STATE}{}{December 2014 - June 2015}{}\vspace{-4.0mm}
     \cventry{Liason}{Consejo de Educación Popular de América Latina y el Caribe (CEAAL)}{}{November 2013 - June 2015}{}\vspace{-4.0mm}
     \cventry{Alternate Representative}{General Student Council Directive}{}{August 2011 - May 2012}{}\vspace{-4.0mm}
@@ -496,9 +502,8 @@ Experience}{ Offices and Other Experience}}\label{offices-and-other-experience}}
     \cventry{Collaborator}{La Nueva Escuela}{}{September 2010 - May 2015}{}\vspace{-4.0mm}
 \end{cventries}
 
-\hypertarget{memberships}{%
 \section{\texorpdfstring{\faIcon{users}
-Memberships}{ Memberships}}\label{memberships}}
+Memberships}{ Memberships}}\label{memberships}
 
 \textbf{ATBC} \textbar{} Association for Tropical Biology and
 Conservation
@@ -507,41 +512,48 @@ Conservation
 
 \textbf{SSE} \textbar{} Society for the Study of Evolution
 
-\hypertarget{skills}{%
-\section{\texorpdfstring{\faIcon{brain} Skills}{ Skills}}\label{skills}}
+\section{\texorpdfstring{\faIcon{brain} Skills}{ Skills}}\label{skills}
 
 \smallskip
 
-\hypertarget{languages}{%
+\section{\texorpdfstring{\faIcon{cogs}
+Technical}{ Technical}}\label{technical}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{10}{12}\selectfont
+
+\begin{tabular}{>{\centering\arraybackslash}p{3.75cm}>{\centering\arraybackslash}p{3.75cm}}
+\toprule
+\begingroup\fontsize{12}{14}\selectfont \textcolor[HTML]{414141}{\textbf{Skill}}\endgroup & \begingroup\fontsize{12}{14}\selectfont \textcolor[HTML]{414141}{\textbf{Proficiency}}\endgroup\\
+\midrule
+\textcolor[HTML]{7f7f9f}{R} & \textcolor[HTML]{7f7f9f}{Advanced}\\
+\textcolor[HTML]{7f7f9f}{Bash} & \textcolor[HTML]{7f7f9f}{Intermediate}\\
+\textcolor[HTML]{7f7f9f}{Python} & \textcolor[HTML]{7f7f9f}{Beginner}\\
+\textcolor[HTML]{7f7f9f}{LaTex} & \textcolor[HTML]{7f7f9f}{Beginner}\\
+\textcolor[HTML]{7f7f9f}{Fusion 360} & \textcolor[HTML]{7f7f9f}{Intermediate}\\
+\addlinespace
+\textcolor[HTML]{7f7f9f}{Inkscape} & \textcolor[HTML]{7f7f9f}{Intermediate}\\
+\textcolor[HTML]{7f7f9f}{Git} & \textcolor[HTML]{7f7f9f}{Intermediate}\\
+\textcolor[HTML]{7f7f9f}{Markdown} & \textcolor[HTML]{7f7f9f}{Intermediate}\\
+\bottomrule
+\end{tabular}
+\endgroup{}
+\end{table}
+
 \section{\texorpdfstring{\faIcon{language}
-Languages}{ Languages}}\label{languages}}
+Languages}{ Languages}}\label{languages}
 
 \begin{table}[H]
 \centering\begingroup\fontsize{10}{12}\selectfont
 
 \begin{tabular}{>{\centering\arraybackslash}p{4.5cm}>{\centering\arraybackslash}p{4.5cm}>{\centering\arraybackslash}p{4.5cm}>{\centering\arraybackslash}p{4.5cm}}
 \toprule
-\textcolor[HTML]{414141}{\textbf{Skill}} & \textcolor[HTML]{414141}{\textbf{Spanish}} & \textcolor[HTML]{414141}{\textbf{English}} & \textcolor[HTML]{414141}{\textbf{Portuguese}}\\
+\begingroup\fontsize{12}{14}\selectfont \textcolor[HTML]{414141}{\textbf{Skill}}\endgroup & \begingroup\fontsize{12}{14}\selectfont \textcolor[HTML]{414141}{\textbf{Spanish}}\endgroup & \begingroup\fontsize{12}{14}\selectfont \textcolor[HTML]{414141}{\textbf{English}}\endgroup & \begingroup\fontsize{12}{14}\selectfont \textcolor[HTML]{414141}{\textbf{Portuguese}}\endgroup\\
 \midrule
 Reading & \textcolor[HTML]{7f7f9f}{Native} & \textcolor[HTML]{7f7f9f}{Advanced} & \textcolor[HTML]{7f7f9f}{Intermediate}\\
 Writing & \textcolor[HTML]{7f7f9f}{Native} & \textcolor[HTML]{7f7f9f}{Advanced} & \textcolor[HTML]{7f7f9f}{Intermediate}\\
 Listening & \textcolor[HTML]{7f7f9f}{Native} & \textcolor[HTML]{7f7f9f}{Advanced} & \textcolor[HTML]{7f7f9f}{Intermediate}\\
 Speaking & \textcolor[HTML]{7f7f9f}{Native} & \textcolor[HTML]{7f7f9f}{Advanced} & \textcolor[HTML]{7f7f9f}{Intermediate}\\
-\bottomrule
-\end{tabular}
-\endgroup{}
-\end{table}
-
-\faIcon{cogs} Technical skills
-
-\begin{table}[H]
-\centering\begingroup\fontsize{10}{12}\selectfont
-
-\begin{tabular}{>{\centering\arraybackslash}p{4.75cm}>{\centering\arraybackslash}p{4.75cm}>{\centering\arraybackslash}p{4.75cm}}
-\toprule
-\textcolor[HTML]{414141}{\textbf{Coding Languages}} & \textcolor[HTML]{414141}{\textbf{Software}} & \textcolor[HTML]{414141}{\textbf{Other}}\\
-\midrule
-\textcolor[HTML]{7f7f9f}{R -- Bash} & \textcolor[HTML]{7f7f9f}{Fusion 360 -- Inkscape} & \textcolor[HTML]{7f7f9f}{Git -- Markdown -- LaTex}\\
 \bottomrule
 \end{tabular}
 \endgroup{}

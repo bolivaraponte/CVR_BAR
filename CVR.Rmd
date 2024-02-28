@@ -7,7 +7,6 @@ headcolor: 414141
 #qualifications: 
 position: "Ph.D. candidate"
 address: "Department of Ecology and Evolutionary Biology | Tulane University, New Orleans, LA 70118"
-#phone: "+1-787-433-6970"
 #www: 
 email: apontebolivar@gmail.com
 twitter: bolaponte
@@ -50,8 +49,7 @@ editor_options:
 ```{r, include=FALSE, cache = FALSE}
 library(knitr)
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
-#opts_knit$set(output.dir = "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR")
-opts_knit$set(output.dir = "/home/baponte/Box/CV_Resume/CV/CVR_BAR")
+opts_knit$set(output.dir = "/home/baponte/Boxx/CV_Resume/CV/CVR_BAR")
 opts_knit$get("tangle")
 
 library(vitae)
@@ -63,18 +61,10 @@ library(glue)
 library(ggrepel)
 library(emojifont)
 library(fontawesome)
-#library(huxtable)
-library(gridExtra)
-library(ggplot2)
 ```
 
 ```{r, path}
-<<<<<<< HEAD
 path <- "/home/baponte/Boxx/CV_Resume/CV/CVR_BAR"
-=======
-#path <- "C:/Users/boloq/Box/CV_Resume/CV/CVR_BAR"
-path <- "/home/baponte/Box/CV_Resume/CV/CVR_BAR"
->>>>>>> 26e8ad0679a086f3b1cc68355b3c8285c6c7de3b
 ```
 
 \faIcon{graduation-cap} Education
@@ -153,9 +143,6 @@ read_excel(file.path(path, "docs/awards.xlsx")) %>%
 
 \faIcon{chalkboard} Teaching Experience
 ===============================
-
-Teaching Assistant
-
 #### Tulane University: 2018-Present\
 
 Instructor
@@ -270,6 +257,21 @@ read_excel(file.path(path, "docs/offices.xlsx")) %>%
 
 \smallskip
 
+\faIcon{cogs} Technical
+===============================
+
+```{r techtable}
+data.frame(
+  Skill = c("R", "Bash", "Python","LaTex", "Fusion 360", "Inkscape", "Git", "Markdown"),
+  Proficiency = c("Advanced", "Intermediate", "Beginner", "Beginner", "Intermediate", "Intermediate", "Intermediate", "Intermediate")
+ ) |>
+kable(booktabs = T, align = 'c', escape = F, format = "latex") |>
+kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") |>
+row_spec(0, bold = T, color = "#414141", font_size = 12) |>
+row_spec(1:9, bold = F, color = "#7f7f9f") |>
+column_spec(column = 1:2, width = '3.75cm')
+```
+
 \faIcon{language} Languages
 ===============================
 
@@ -282,34 +284,8 @@ data.frame(
  )|>
    kable(booktabs = T, align = 'c', escape = F, format = "latex") |>
    kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") |>
-  row_spec(0, bold = T, color = "#414141")|>
+  row_spec(0, bold = T, color = "#414141", font_size = 12)|>
    column_spec(column = 1:4, width = '4.5cm')
 ```
 
-\faIcon{cogs} Technical skills
 
-```{r techtable, results='markup'}
-
-# lang= matrix(c(7, 5, 3), ncol=1, byrow=FALSE)
-# colnames(lang) <- c("Proficiency")
-# rownames <- c("R", "Bash", "Python")
-# lang <- tibble::rownames_to_column(lang, "Prgramming language")
-# 
-# lang <- as_tibble(lang)
-# lang
-# lang <- c("R", "Bash", "Python")
-# rate <- c(7, 5, 3)
-#table <- tibbble(cbind(rate, lang))
-#
-tribble(
-   ~`Coding Languages`, ~Software, ~Other,
-  "R -- Bash",
-  "Fusion 360 -- Inkscape",
-  "Git -- Markdown -- LaTex"
-) |>
-kable(booktabs = T, align = 'c', escape = F, format = "latex") |>
-kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") |>
-row_spec(0, bold = T, color = "#414141") |>
-row_spec(1, bold = F, color = "#7f7f9f") |>
-column_spec(column = 1:3, width = '4.75cm')
-```
